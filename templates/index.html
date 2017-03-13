@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="gridtable">
+    <tr>
+        <th>site</th>
+        <th>update time</th>
+        <th>upload</th>
+        <th>download</th>
+        <th>coins</th>
+    </tr>
+
+{% for info in infos %}
+    <tr>
+        <td>
+            {% if info[1] %}
+                <a href="https://{{ info[0] }}" target="_blank">{{ info[0] }}</a>
+            {% else %}
+                <a href="http://{{ info[0] }}" target="_black">{{ info[0] }}</a>
+            {% endif %}
+        </td>
+        <td>{{ info[2] }}</td>
+        <td>{{ info[3] }}</td>
+        <td>{{ info[4] }}</td>
+        <td>{{ info[5] }}</td>
+    </tr>
+{% endfor %}
+
+</table>
+<!--
+<br>
+<form method="get" name="searchbox" action="?">
+<input id="searchinput" name="search" type="text" value="" style="width: 200px" />
+<input type="submit" value="search" />
+</form>
+-->
+{% endblock %}

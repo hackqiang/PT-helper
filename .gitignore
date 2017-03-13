@@ -1,0 +1,6 @@
+data
+!data/cookies/README
+*.pyc
+log
+.idea
+tmp
