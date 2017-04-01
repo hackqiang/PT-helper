@@ -18,8 +18,11 @@ class nexusphp():
         self.user_url = None
         
         self.signin_date = None
+        
+        self.sync_cookie()
 
-        self.cookie = http.get_cookie(host)
+    def sync_cookie(self):
+        self.cookie = http.get_cookie(self.host)
         if not self.cookie:
             raise Exception('get_cookie fail')
 

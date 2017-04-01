@@ -16,10 +16,12 @@ class PThtmlparser():
 
     def signin(self):
         if self.parser:
+            self.parser.sync_cookie()
             return self.parser.signin()
 
     def search(self, keywords):
         if self.parser:
+            self.parser.sync_cookie()
             return self.parser.search(keywords)
 
     def get_user_info(self):
@@ -27,6 +29,7 @@ class PThtmlparser():
             return (True, upload_siz, download_size, coin)
         '''
         if self.parser:
+            self.parser.sync_cookie()
             return self.parser.get_user_info()
         else:
             return False, '', '', ''
